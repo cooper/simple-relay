@@ -1,3 +1,6 @@
 [submodule "libirc"]
 	path = libirc
 	url = git://github.com/cooper/libirc.git
+[submodule "evented-object"]
+	path = evented-object
+	url = git://github.com/cooper/evented-object.git

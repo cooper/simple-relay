@@ -4,13 +4,14 @@ use warnings;
 use strict;
 use feature qw(switch say);
 
-use lib 'lib';
+use lib 'evented-object';
 use lib 'libirc/lib';
 
 use IO::Async;
 use IO::Async::Loop;
+
 use IRC;
-use Async::IRC;
+use IRC::Async;
 
 say 'hi!';
 
@@ -53,8 +54,8 @@ my @chan2 = @{$opts2{chan}};
 delete $opts1{chan}; delete $opts2{chan};
 
 # create IRC objects
-my $irc1 = Async::IRC->new(%opts1);
-my $irc2 = Async::IRC->new(%opts2);
+my $irc1 = IRC::Async->new(%opts1);
+my $irc2 = IRC::Async->new(%opts2);
 
 $irc1->{server_name} = $name1;
 $irc2->{server_name} = $name2;
