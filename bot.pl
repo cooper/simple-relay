@@ -70,11 +70,13 @@ $irc2->connect;
 
 $irc1->attach_event(privmsg => sub {
     my ($irc, $who, $chan, $what) = @_;
+    return unless lc $chan->{name} eq lc $chan1;
     $irc2->send("PRIVMSG $chan2 :\2<$$who{nick}>\2 $what");
 });
 
 $irc2->attach_event(privmsg => sub {
     my ($irc, $who, $chan, $what) = @_;
+    return unless lc $chan->{name} eq lc $chan2;
     $irc1->send("PRIVMSG $chan1 :\2<$$who{nick}>\2 $what");
 });
 
