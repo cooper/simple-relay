@@ -1,0 +1,3 @@
+[submodule "libirc"]
+	path = libirc
+	url = git://github.com/cooper/libirc.git
