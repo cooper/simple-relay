@@ -23,7 +23,7 @@ my %servers = (
     valleynode => {
         nick => 'Sharon',
         user => 'sharon',
-        real => 'Sharon Herget',
+        real => 'Sharon Herget (Sharon Sherry Sheryl Shannon Shaniquia Shelly)',
         host => 'irc.valleynode.net',
         port => 6667,
         chan => ['#1lobby']
@@ -31,10 +31,26 @@ my %servers = (
     alphafaggot => {
         nick => 'Sharon',
         user => 'sharon',
-        real => 'Sharon Herget',
+        real => 'Sharon Herget (Sharon Sherry Sheryl Shannon Shaniquia Shelly)',
         host => 'irc.alphachat.net',
         port => 6667,
-        chan => ['#1lobby', '#cooper']
+        chan => ['#1lobby', '#cooper', '#k', '#ssss', '#halp', '#superfunclub']
+    },
+    'mac-mini' => {
+        nick => 'Sharon',
+        user => 'sharon',
+        real => 'Sharon Herget (Sharon Sherry Sheryl Shannon Shaniquia Shelly)',
+        host => 'irc.mac-mini.org',
+        port => 6667,
+        chan => ['#k', '#1lobby']
+    },
+    entropynet => {
+        nick => 'Sharon',
+        user => 'sharon',
+        real => 'Sharon Herget (Sharon Sherry Sheryl Shannon Shaniquia Shelly)',
+        host => 'irc.entropynet.net',
+        port => 6667,
+        chan => ['#1lobby']
     }
 );
 
@@ -68,7 +84,7 @@ foreach my $name (keys %servers) {
         # send to other networks.
         foreach my $oirc (@ircs) {
             next if $oirc == $irc;
-            $oirc->send("PRIVMSG $_ :\2<$$who{nick} (\2$name\2)>\2 $what") foreach @{$oirc->{autojoin}};
+            $oirc->send("PRIVMSG $_ :\2<$$who{nick} (\2$name/$$chan{name}\2)>\2 $what") foreach @{$oirc->{autojoin}};
         }
         
     });
