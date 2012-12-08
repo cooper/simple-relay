@@ -28,13 +28,13 @@ my %servers = (
         port => 6667,
         chan => ['#1lobby']
     },
-    alphafaggot => {
+    gtaxlnet => {
         nick => 'Sharon',
         user => 'sharon',
         real => 'Sharon Herget (Sharon Sherry Sheryl Shannon Shaniquia Shelly)',
-        host => 'irc.alphachat.net',
+        host => 'irc.gtaxl.net',
         port => 6667,
-        chan => ['#1lobby', '#cooper', '#k', '#ssss', '#halp', '#superfunclub']
+        chan => ['#1lobby']
     },
     'mac-mini' => {
         nick => 'Sharon',
