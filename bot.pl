@@ -74,7 +74,7 @@ foreach my $name (keys %servers) {
     $loop->add($irc);
     $irc->connect;
     
-    $irc->attach_event(privmsg => sub {
+    $irc->on(privmsg => sub {
         my (undef, $who, $chan, $what) = @_;
         return unless defined $chan->{name};
         
