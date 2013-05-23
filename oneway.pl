@@ -32,6 +32,7 @@ my %opts1 = (
 
 # second server - messages will be relayed FROM here.
 my %opts2 = (
+    ssl  => 1,
     name => 'valleynode2',
     pass => 'p@55w0rd',
     nick => 'relay-from',

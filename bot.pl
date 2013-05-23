@@ -4,7 +4,7 @@ use warnings;
 use strict;
 use feature qw(switch say);
 
-use lib 'evented-object';
+use lib 'eventedobject';
 use lib 'libirc/lib';
 
 use IO::Async;
