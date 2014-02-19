@@ -1,6 +1,6 @@
-[submodule "libirc"]
+[submodule "libirc-classic"]
 	path = libirc
-	url = git://github.com/cooper/libirc.git
-[submodule "eventedobject"]
-	path = eventedobject
-	url = git://github.com/cooper/eventedobject.git
+	url = git://github.com/cooper/libirc-classic.git
+[submodule "evented-object"]
+	path = evented-object
+	url = git://github.com/cooper/evented-object.git

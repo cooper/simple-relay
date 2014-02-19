@@ -4,14 +4,14 @@ use warnings;
 use strict;
 use feature qw(switch say);
 
-use lib 'eventedobject';
+use lib 'evented-object/lib';
 use lib 'libirc/lib';
 
 use IO::Async;
 use IO::Async::Loop;
 
-use IRC;
-use IRC::Async;
+use Evented::IRC;
+use Evented::IRC::Async;
 
 say 'hi!';
 
@@ -28,29 +28,21 @@ my %servers = (
         port => 6667,
         chan => ['#1lobby']
     },
-    gtaxlnet => {
-        nick => 'Sharon',
-        user => 'sharon',
-        real => 'Sharon Herget (Sharon Sherry Sheryl Shannon Shaniquia Shelly)',
-        host => 'irc.gtaxl.net',
-        port => 6667,
-        chan => ['#1lobby']
-    },
     'mac-mini' => {
         nick => 'Sharon',
         user => 'sharon',
         real => 'Sharon Herget (Sharon Sherry Sheryl Shannon Shaniquia Shelly)',
         host => 'irc.mac-mini.org',
         port => 6667,
-        chan => ['#k', '#1lobby']
+        chan => ['#k']
     },
-    entropynet => {
+    notrollplznet => {
         nick => 'Sharon',
         user => 'sharon',
         real => 'Sharon Herget (Sharon Sherry Sheryl Shannon Shaniquia Shelly)',
-        host => 'irc.entropynet.net',
+        host => 'irc.notroll.net',
         port => 6667,
-        chan => ['#1lobby']
+        chan => ['#k']
     }
 );
 
@@ -67,7 +59,7 @@ my $loop = IO::Async::Loop->new();
 foreach my $name (keys %servers) {
     my $opts  = $servers{$name};
     my $chans = delete $opts->{chan};
-    my $irc   = IRC::Async->new(%$opts);
+    my $irc   = Evented::IRC::Async->new(%$opts);
     push @ircs, $irc;
     $irc->{server_name} = $name;
     $irc->{autojoin}    = $chans;
